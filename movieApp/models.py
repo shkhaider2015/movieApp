@@ -18,7 +18,7 @@ class Movie(db.Model):
     cast = db.relationship('Actor', secondary=actors, lazy='subquery',
                            backref=db.backref('movies', lazy=True)
                            )
-    
+
 
 class Actor(db.Model):
     id = db.Column(db.Integer, primary_key=True)
