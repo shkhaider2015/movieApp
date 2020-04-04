@@ -10,6 +10,7 @@ actors = db.Table('actors',
 class Movie(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     movie_title = db.Column(db.String(30), unique=False, nullable=False)
+    movie_industry = db.Column(db.String(30), unique=False, nullable=False)
     movie_genr = db.Column(db.String(30), unique=False,
                            nullable=True, default="movies")
     movie_image = db.Column(db.String(50), nullable=False,

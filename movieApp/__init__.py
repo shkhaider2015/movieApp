@@ -13,7 +13,9 @@ def create_app():
     db.init_app(app)
 
     from movieApp.main.routes import main
+    from movieApp.admin.routes import admin
 
     app.register_blueprint(main)
+    app.register_blueprint(admin)
 
     return app
