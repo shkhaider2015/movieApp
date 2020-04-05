@@ -5,6 +5,13 @@ from wtforms.validators import DataRequired, Email
 from flask_wtf.file import FileField, file_allowed
 from wtforms.fields.html5 import DateField
 
+choicess = [
+    ('1', 'add'),
+    ('2', 'sub'),
+    ('3', 'mul'),
+    ('4', 'div')
+]
+
 
 class LoginForm(FlaskForm):
     email = StringField("Email", validators=[DataRequired(), Email()])
@@ -18,5 +25,5 @@ class DataSubmitForm(FlaskForm):
     movie_genr = StringField("Genr", validators=[DataRequired()])
     movie_image = FileField("upload Picture", validators=[file_allowed(['jpg', 'png'])])
     release_date = DateField("DatePicker", format="%Y-%m-%d")
-    # cast = SelectMultipleField("Select Cast", choices=[''])
+    cast = SelectMultipleField(choices=choicess)
     submit = SubmitField("Add")

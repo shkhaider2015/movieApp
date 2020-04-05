@@ -27,3 +27,8 @@ def admin_login():
         else:
             flash("Check email and password", 'danger')
     return render_template("admin_login.html", title="Admin Page", form=form)
+
+
+@admin.route('/admin/custom_login_form')
+def custom_form():
+    return render_template('my_custom_login_form.html', title="My Own Form")

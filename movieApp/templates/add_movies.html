@@ -91,6 +91,23 @@
                 {% endif %}
             </div>
 
+            <div class="form-group">
+                {{ form.cast.label(class="form-control-label") }}
+                
+                {% if form.cast.errors %}
+                    {{ form.cast(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in errors %}
+                            <span> {{ error }} </span>
+                        {% endfor %}
+                    </div>
+
+                {% else %}
+                    {{ form.cast(class="form-control form-control-lg") }}
+
+                {% endif %}
+            </div>
+
             
 
             <div class="form-group">
