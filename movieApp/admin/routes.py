@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, flash, redirect, url_for
+from flask import Blueprint, render_template, flash, redirect, url_for, request
 from movieApp.admin.forms import LoginForm, DataSubmitForm
 
 admin = Blueprint('admin', __name__)
@@ -29,6 +29,14 @@ def admin_login():
     return render_template("admin_login.html", title="Admin Page", form=form)
 
 
-@admin.route('/admin/custom_login_form')
+@admin.route('/admin/custom_login_form', methods=['GET', 'POST'])
 def custom_form():
+
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        if email == 'shkhaider2015@gmail.com' and password == '1234':
+            flash("Successfully Register !!", 'success')
+        else:
+            flash("Check you email or password", 'danger')
     return render_template('my_custom_login_form.html', title="My Own Form")
