@@ -1,6 +1,11 @@
 {% extends "layout.html" %}
 
 {% block content %}
+{% set genr_data = [ 'Dubbed', 'Action', 'Adventure', 'Animation', 'Biography', 'Comedy',
+'Crime', 'Documentary', 'Drama', 'Family', 'Fantasy', 'History',
+ 'Horror', 'Kids', 'Sci-Fi', 'Thriller', 'Western' ] %}
+
+
 
 
     <div class="container content-section">
@@ -10,11 +15,44 @@
             <legend> Add Movie </legend>
 
             <div class="form-group">
-                <input type="text" class="form-control" name="movie_title" placeholder="Movie Title" >
+                <label for="movie_title" >Movie Title</label>
+                <input type="text" class="form-control" id="movie_title" name="movie_title" placeholder="Movie Title" >
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control" name="movie_title" placeholder="Movie Title" >
+               <select name="xxx" id="xxx">
+                <option value="ss">Hollywood</option>
+                <option value="ss">Bollywood</option>
+               </select>
+            </div>
+
+            <div class="form-group date">
+                <label for="released_date" >Released Date</label>
+                <input type="date" class="form-control" id="released_date" name="released_date" placeholder="Released Date" >
+            </div>
+
+            <span>Genr</span>
+            <div class="form-group form-control ">
+            
+                {% for data in genr_data %}
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="{{ loop.index }}">
+                        <label class="form-check-label" for="loop.index">{{ data }}</label>
+                    </div>
+
+                {% endfor %}
+            
+            </div>
+
+            <div class="form-group">
+                <label for="movie_image" >Choose Title Image</label>
+                <input type="file" class="form-control-file  form-control" id="movie_image" name="movie_image" >
+            </div>
+
+            <div class="form-group">
+                <label for="cast" >Cast</label>
+                <input type="text" class="form-control form-control" id="cast" name="cast" placeholder="Seperate each cast by comma" >
             </div>
 
         </form>

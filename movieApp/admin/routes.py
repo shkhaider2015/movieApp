@@ -12,7 +12,7 @@ def my_admin():
 @admin.route('/admin/add_movie')
 def add_data():
     form = DataSubmitForm()
-    return render_template("add_movies.html", title="Admin Page", form=form)
+    return render_template("my_custom_add_movies.html", title="Admin Page", form=form)
 
 
 @admin.route('/admin/login', methods=['GET', 'POST'])
