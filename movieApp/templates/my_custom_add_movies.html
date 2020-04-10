@@ -20,9 +20,9 @@
             </div>
 
             <div class="form-group">
-               <select name="xxx" id="xxx">
-                <option value="ss">Hollywood</option>
-                <option value="ss">Bollywood</option>
+               <select name="industry" id="industry">
+                <option value="Hollywood">Hollywood</option>
+                <option value="Bollywood">Bollywood</option>
                </select>
             </div>
 
@@ -37,7 +37,7 @@
                 {% for data in genr_data %}
 
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" value="" id="{{ loop.index }}">
+                        <input class="form-check-input" type="checkbox" value="{{ data }}" name="GenrList" id="{{ loop.index }}">
                         <label class="form-check-label" for="loop.index">{{ data }}</label>
                     </div>
 
@@ -53,6 +53,13 @@
             <div class="form-group">
                 <label for="cast" >Cast</label>
                 <input type="text" class="form-control form-control" id="cast" name="cast" placeholder="Seperate each cast by comma" >
+            </div>
+
+            <div class="form-group mt-5">
+                <center>
+                    <button type="submit" class="btn btn-primary w-25 " >Upload</button>
+                </center>
+                
             </div>
 
         </form>
